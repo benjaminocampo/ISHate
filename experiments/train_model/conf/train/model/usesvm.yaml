@@ -1,0 +1,10 @@
+module: ${eval:USE_SVM}
+params:
+  C: 1.0
+  kernel: rbf
+  degree: 3
+  gamma: scale
+  probability: true
+  verbose: true
+  class_weight: true
+  random_state: 42

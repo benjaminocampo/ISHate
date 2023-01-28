@@ -1,0 +1,11 @@
+module: ${eval:TransformerModel}
+params:
+  batch_size: 32
+  checkpoint_path: null
+  huggingface_path: microsoft/deberta-v3-base
+  epochs: 4
+  lr: 2e-5
+  random_state: 42
+  weight_decay: 0.01
+  device: cpu
+  num_labels: 3

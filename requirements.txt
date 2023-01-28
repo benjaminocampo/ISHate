@@ -1,0 +1,7 @@
+# local package
+-e .
+
+# external requirements
+scikit-learn
+transformers
+mlflow

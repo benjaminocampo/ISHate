@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+ISHate.egg-info/PKG-INFO
+ISHate.egg-info/SOURCES.txt
+ISHate.egg-info/dependency_links.txt
+ISHate.egg-info/top_level.txt

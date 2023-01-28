@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: ISHate
+Version: 1.0
+Summary: An In-depth Analysis of Implicit and Subtle Hate Speech Messages
+Author: Benjamin Ocampo
+Author-email: nicolas.ocampo@inria.fr
+License: BSL
+License-File: LICENSE

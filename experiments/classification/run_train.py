@@ -22,8 +22,7 @@ def cmd(c):
         exit()
 
 
-submission_text = lambda run_name: cleandoc(
-    f"""
+submission_text = lambda run_name: cleandoc(f"""
     #!/bin/bash
     #SBATCH --job-name={run_name}
     #SBATCH --ntasks=1
@@ -33,18 +32,17 @@ submission_text = lambda run_name: cleandoc(
     srun 
     """)
 
-oar_submission_text = lambda run_cmd: cleandoc(
-    f"""
+oar_submission_text = lambda run_cmd: cleandoc(f"""
     oarsub -p "mem > 100000" -l /nodes=1,walltime=24 --stdout=run.out --stderr=run.err -q default 'conda activate sald; {run_cmd}'
-    """
-)
+    """)
+
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--use-cluster-batch",
-        type=str, choices=["slurm", "oar"], default=None
-    )
+    parser.add_argument("--use-cluster-batch",
+                        type=str,
+                        choices=["slurm", "oar"],
+                        default=None)
     args = parser.parse_args()
     use_cluster_batch = args.use_cluster_batch
     tasks = ["implicit_task", "subtle_task"]
@@ -58,16 +56,18 @@ def main():
     for task, model, aug_method in it.product(tasks, models, aug_methods):
         run_name = f"task-{task}__model-{model}__aug_method-{aug_method}"
 
-        cmd_str = (submission_text(run_name) if use_cluster_batch == "slurm" else
-               "") + ("python train_model.py"
-                      f" train/model={model}"
-                      f" input.train_file=../../data/{task}/train.parquet.gzip"
-                      f" input.dev_file=../../data/{task}/dev.parquet.gzip"
-                      f" input.test_file=../../data/{task}/test.parquet.gzip"
-                      f" input.run_name={run_name}"
-                       " input.train_size=0.05") + (
-                          f" ++input.augmentation_file=../../data/{task}/aug_data/{aug_method}.parquet.gzip"
-                          if aug_method is not None else "")
+        cmd_str = (
+            submission_text(run_name) if use_cluster_batch == "slurm" else ""
+        ) + (
+            "python train.py"
+            f" train/model={model}"
+            f" input.train_file=../../data/{task}/train.parquet.gzip"
+            f" input.dev_file=../../data/{task}/dev.parquet.gzip"
+            f" input.test_file=../../data/{task}/test.parquet.gzip"
+            f" input.run_name={run_name}"
+        ) + (
+            f" ++input.augmentation_file=../../data/{task}/aug_data/{aug_method}.parquet.gzip"
+            if aug_method is not None else "")
         runs.append((run_name, cmd_str))
 
     if use_cluster_batch == "slurm":

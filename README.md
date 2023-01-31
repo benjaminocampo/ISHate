@@ -123,7 +123,7 @@ published. You can use the following entry for the moment:
 ```scss
 @inproceedings{OcampoEtAl2023,
   title={An In-depth Analysis of Implicit and Subtle Hate Speech Messages},
-  author={Nicolas Benjamin Ocampo and Ekaterina Sviridova and Elena Cabrio and Serena Villata},
+  author={Nicolas Ocampo and Ekaterina Sviridova and Elena Cabrio and Serena Villata},
   booktitle={The 17th Conference of the European Chapter of the Association for Computational Linguistics},
   year={2023}
 }

@@ -9,6 +9,6 @@ input:
   train_size: null
   augmentation_file: null
   run_name: ???
-  uri_path: file:///user/nocampo/home/Documents/phd/sald/models/mlruns
+  uri_path: null
   experiment_name: Hypothesis 1
   experiment_description: "**Hypothesis 1:** Implicit/Subtle messages are harder to detect than Explicit/Non-Subtle ones."

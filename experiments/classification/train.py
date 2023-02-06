@@ -105,8 +105,9 @@ def run_experiment(cfg: DictConfig, run: mlflow.ActiveRun):
 def main(cfg: DictConfig):
     OmegaConf.register_new_resolver('eval', lambda x: eval(x))
 
-    mlflow.set_tracking_uri(cfg.input.uri_path)
-    assert cfg.input.uri_path == mlflow.get_tracking_uri()
+    if cfg.input.uri_path is not None:
+        mlflow.set_tracking_uri(cfg.input.uri_path)
+        assert cfg.input.uri_path == mlflow.get_tracking_uri()
 
     logger.info(f"Current tracking uri: {cfg.input.uri_path}")
 

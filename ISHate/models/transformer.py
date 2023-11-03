@@ -1,6 +1,6 @@
 from transformers import (AutoModelForSequenceClassification, AutoTokenizer,
                           TextClassificationPipeline, TrainingArguments,
-                          Trainer, DataCollatorWithPadding)
+                          Trainer, DataCollatorWithPadding, set_seed)
 from datasets import Dataset
 from ISHate.models.base import Model
 import pandas as pd
@@ -60,6 +60,8 @@ class TransformerModel(Model):
                  device: str = "cpu") -> None:
         super(TransformerModel, self).__init__(output_dir)
 
+        set_seed(random_state)
+
         # Load model from hugginface hub.
         model = AutoModelForSequenceClassification.from_pretrained(
             huggingface_path,
@@ -97,6 +99,7 @@ class TransformerModel(Model):
             num_train_epochs=self.epochs,
             weight_decay=self.weight_decay,
             seed=self.random_state,
+            device=self.device,
             #data_seed=self.random_state,
             optim="adamw_hf")
 

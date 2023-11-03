@@ -6,3 +6,7 @@ scikit-learn
 transformers
 mlflow
 krippendorff
+datasets
+tensorflow-hub
+tensorflow
+hydra-core

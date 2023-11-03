@@ -55,14 +55,62 @@ our experiments.
 
 # Models
 
-Each model can be accessed through the huggingface hub.
- 
+Each model can be accessed through the Huggingface Hub. The first three models (BERT, DeBERTa, HateBERT)
+can be loaded using the Huggingface Transformers library, while the SVM model is saved as a pickle file
+and can be loaded with the Python `pickle` module.
+
+## Loading Transformer Models
+
+To load the transformer-based models (BERT, HateBERT, and DeBERTa), you can use the following code:
+
+```python
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+
+# Example for loading the DeBERTa model with the 'ri' augmentation method for the 'subtle_task'
+tokenizer = AutoTokenizer.from_pretrained("BenjaminOcampo/task-subtle_task__model-deberta__aug_method-ri")
+model = AutoModelForSequenceClassification.from_pretrained("BenjaminOcampo/task-subtle_task__model-deberta__aug_method-ri")
+
+# Alternatively, use a pipeline for easy inference
+from transformers import pipeline
+
+pipe = pipeline("text-classification", model="BenjaminOcampo/task-subtle_task__model-deberta__aug_method-ri")
+
+# To use the model for prediction
+input_text = "Your input text here"
+predictions = pipe(input_text)
+print(predictions)
+```
+
+SVM models are stored as a pickle files. To load and use this model, you'll need to use the pickle module in Python as shown below:
+
+```python
+import pickle
+
+# Load SVM model from a pickle file
+with open('path_to_your_svm_model.pkl', 'rb') as model_file:
+    svm_model = pickle.load(model_file)
+
+# To predict with the SVM model
+# Make sure to preprocess your input features the same way as when the model was trained
+input_features = preprocess_input("Your input text or features here")
+predictions = svm_model.predict(input_features)
+print(predictions)
+```
+
+## Model Naming Convention
+
+The models are saved with the following naming convention on my Huggingface profile:
+`task-{implicit_task, subtle_task}__model-{bert, hatebert, deberta, svm}__aug_method-{aav, all, bt, eda, gm, gm-revised, ra, ri, rne, rsa, None}`
+
+Replace the placeholders with the specific task, model, and augmentation method you wish to use.
+
 # Implementations
 
 In the directory `ISHate`, the implementation of various machine learning models
 such as `BERT`, `DeBERTa`, `HateBERT`, and `USE_SVM` can be found, along with
 various data augmentation methods including `AAV`, `BT`, `EDA`, `RA`, `RI`,
 `RNE`, and `RSA`.
+
 
 # Reproduce experiments
 

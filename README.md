@@ -1,4 +1,4 @@
-# An In-depth Analysis of Implicit and Subtle Hate Speech Messages
+# [An In-depth Analysis of Implicit and Subtle Hate Speech Messages](https://aclanthology.org/2023.eacl-main.147/)
 
 This repository contains the dataset and implementation details of the paper "An
 In-depth Analysis of Implicit and Subtle Hate Speech Messages" accepted at EACL
@@ -99,7 +99,7 @@ print(predictions)
 
 ## Model Naming Convention
 
-The models are saved with the following naming convention on my Huggingface profile:
+The models are saved with the following naming convention on my Huggingface profile (https://huggingface.co/BenjaminOcampo):
 `task-{implicit_task, subtle_task}__model-{bert, hatebert, deberta, svm}__aug_method-{aav, all, bt, eda, gm, gm-revised, ra, ri, rne, rsa, None}`
 
 Replace the placeholders with the specific task, model, and augmentation method you wish to use.

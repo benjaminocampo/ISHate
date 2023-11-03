@@ -18,9 +18,8 @@ import shlex
 import sys
 import mlflow
 
+logging.basicConfig(level=logging.INFO,format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
-logger.basicConfig(level=logger.INFO,
-                            format="%(asctime)s [%(levelname)s] %(message)s")
 
 def run_experiment(cfg: DictConfig, run: mlflow.ActiveRun):
     """

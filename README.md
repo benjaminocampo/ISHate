@@ -164,10 +164,6 @@ you to improve our project.
 
 # Cite us
 
-This is a temporary BibTeX until the publication is uploaded in the ACL
-`Anthology`. We will update the BibTeX entry as soon as the accepted paper is
-published. You can use the following entry for the moment:
-
 ```tex
 @inproceedings{ocampo-etal-2023-depth,
     title = "An In-depth Analysis of Implicit and Subtle Hate Speech Messages",

@@ -44,8 +44,8 @@ directory `./data/` as compressed parquet files. They can be easily opened with
 import pandas as pd
 
 train = pd.read_parquet("./data/ishate_train.parquet.gzip")
-dev = pd.read_parquet("./data/ishate_train.parquet.gzip")
-test = pd.read_parquet("./data/ishate_train.parquet.gzip")
+dev = pd.read_parquet("./data/ishate_dev.parquet.gzip")
+test = pd.read_parquet("./data/ishate_test.parquet.gzip")
 ```
 
 For simplicity, when training machine learning models for implicit and subtle

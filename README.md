@@ -167,16 +167,19 @@ you to improve our project.
 ```tex
 @inproceedings{ocampo-etal-2023-depth,
     title = "An In-depth Analysis of Implicit and Subtle Hate Speech Messages",
-    author = "Ocampo, Nicolas  and
+    author = "Ocampo, Nicol{\'a}s Benjam{\'\i}n  and
       Sviridova, Ekaterina  and
       Cabrio, Elena  and
       Villata, Serena",
+    editor = "Vlachos, Andreas  and
+      Augenstein, Isabelle",
     booktitle = "Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics",
     month = may,
     year = "2023",
     address = "Dubrovnik, Croatia",
     publisher = "Association for Computational Linguistics",
     url = "https://aclanthology.org/2023.eacl-main.147",
+    doi = "10.18653/v1/2023.eacl-main.147",
     pages = "1997--2013",
     abstract = "The research carried out so far in detecting abusive content in social media has primarily focused on overt forms of hate speech. While explicit hate speech (HS) is more easily identifiable by recognizing hateful words, messages containing linguistically subtle and implicit forms of HS (as circumlocution, metaphors and sarcasm) constitute a real challenge for automatic systems. While the sneaky and tricky nature of subtle messages might be perceived as less hurtful with respect to the same content expressed clearly, such abuse is at least as harmful as overt abuse. In this paper, we first provide an in-depth and systematic analysis of 7 standard benchmarks for HS detection, relying on a fine-grained and linguistically-grounded definition of implicit and subtle messages. Then, we experiment with state-of-the-art neural network architectures on two supervised tasks, namely implicit HS and subtle HS message classification. We show that while such models perform satisfactory on explicit messages, they fail to detect implicit and subtle content, highlighting the fact that HS detection is not a solved problem and deserves further investigation.",
 }

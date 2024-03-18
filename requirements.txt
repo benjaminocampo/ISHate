@@ -8,5 +8,5 @@ mlflow
 krippendorff
 datasets
 tensorflow-hub
-tensorflow
+torch
 hydra-core

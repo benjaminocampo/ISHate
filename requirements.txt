@@ -9,4 +9,5 @@ krippendorff
 datasets
 tensorflow-hub
 torch
+accelerate
 hydra-core

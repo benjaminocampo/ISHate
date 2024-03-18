@@ -99,7 +99,7 @@ class TransformerModel(Model):
             num_train_epochs=self.epochs,
             weight_decay=self.weight_decay,
             seed=self.random_state,
-            device=self.device,
+            #device=self.device,
             #data_seed=self.random_state,
             optim="adamw_hf")
 

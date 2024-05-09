@@ -12,6 +12,17 @@ In-depth Analysis of Implicit and Subtle Hate Speech Messages" accepted at EACL
 - [Contributing](#contributing)
 - [Cite us](#cite-us)
 
+# TLDR
+
+Some common questions that might arise from the dataset:
+
+- Implicit HS and Subtle HS are two different concepts. An HS message is labeled with an Explicit HS or Implicit HS label and then with a Non-Subtle or Subtle label. You can check the definitions of each concept in the paper.
+- Implicit Properties are labeled for all the Implicit HS messages. In particular, for the non-augmented data, that is, original messages. We are also planning to extend the implicit properties to the augmented sentences (Listed as an Issue in the repository). There are no Subtle Properties for the moment.
+- We recommend training models with all the original data + the augmented data (the union of the augmented data of each augmentation method).
+- Target groups are standardized, so analyzing and checking their distribution is easy. We defined the target groups to minimize the possible overlaps between them (For example, when an HS message attacks more than one target group). Some Non-HS messages are also labeled with a target group when possible (not as the target being attacked but the mentioned target group in the message).
+- When we augmented the dataset, we increased the minority classes: Implicit HS and Subtle HS. Augmented Implicit HS/Subtle HS messages were not extended with their Subtle/Implicit labels. A GitHub issue has been opened regarding including this feature as well. 
+- Yes! We have a Huggingface Dataset Card: https://huggingface.co/datasets/BenjaminOcampo/ISHate
+
 # Installation
 
 First, make sure that `conda` is installed on your machine. You can check if it

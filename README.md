@@ -6,13 +6,14 @@ In-depth Analysis of Implicit and Subtle Hate Speech Messages" accepted at EACL
 
 # Index
 
+- [Common Questions](#common-questions)
 - [Installation](#installation)
 - [Dataset](#dataset)
 - [Models](#models)
 - [Contributing](#contributing)
 - [Cite us](#cite-us)
 
-# TLDR
+# Common Questions
 
 Some common questions that might arise from the dataset:
 

@@ -36,6 +36,8 @@ be able to run the experiments.
 
 # Dataset
 
+## Download dataset directly from parquet files in the repository
+
 The ISHate dataset split into train, dev, and test sets can be found in the
 directory `./data/` as compressed parquet files. They can be easily opened with
 `pandas`:
@@ -52,6 +54,18 @@ For simplicity, when training machine learning models for implicit and subtle
 detection, we reorganized the dataset in the directories `./data/implicit_task/`
 and `./data/subtle_task/`. There you can also find the augmented data used in
 our experiments.
+
+## Download dataset from Huggingface Datasets.
+
+You can also download the dataset using huggingface directly through this
+dataset card: (https://huggingface.co/datasets/BenjaminOcampo/ISHate) and
+running in your Python scripts:
+
+```python
+from datasets import load_dataset
+
+dataset = load_dataset("BenjaminOcampo/ISHate")
+```
 
 # Models
 
